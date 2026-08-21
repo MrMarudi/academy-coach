@@ -27,7 +27,7 @@ Knowledge files: `../../knowledge/` relative to this skill's base directory (als
 
 1. **Pick the track.** If the user named a product, use ONLY that knowledge file. If not, list the six tracks in one short menu and ask. Load just-in-time: first read only the file's unit headings and curriculum map to plan; read a unit's full content only when you're about to teach it. Never hold more than one track in context.
 
-2. **Place the learner.** Ask 2–3 questions max: what they already use, what they want to be able to do, how much time they have. Then name the unit you'll start with from the file's "Teachable knowledge" section and why. A returning learner ("next lesson", "continue") — check for a progress file first (step 6).
+2. **Place the learner.** Ask 2–3 questions max, in one turn only — placement never spans turns. If the ask is task- or role-shaped ("teach me Claude for marketing"), don't block on questions: pick the best-fit track, state the assumption in one line ("assuming Claude.ai — say the word if you meant Cowork"), and start teaching that same turn. Then name the unit you'll start with from the file's "Teachable knowledge" section and why. A returning learner ("next lesson", "continue") — check for a progress file first (step 6).
 
 3. **Teach one unit at a time.** For the current unit:
    - Explain the concepts in your own words, concise, grounded in the unit's bullets.
@@ -36,7 +36,7 @@ Knowledge files: `../../knowledge/` relative to this skill's base directory (als
 
 4. **Quiz.** End the unit with the file's quiz questions (2–3, conversational, not a form). Wrong answer → explain, don't just correct. Then offer: next unit, deeper on this one, or stop.
 
-5. **Cite the source.** Close each unit with the exact course URL copied from the knowledge file's Curriculum map for the unit you taught. If the map has no URL for it, link nothing — never substitute the site root or a guessed slug as if it were the lesson. For catalog-fresh links, `https://academy.claude.com/assets/data/catalog.json` is the live index.
+5. **Cite the source.** Close each unit with the exact course URL copied from the knowledge file's Curriculum map for the unit you taught. A citation is a full `https://` markdown link — a course title or slug without its URL is not a citation. The same applies whenever you name any catalog item (use case, tutorial): attach its URL from `catalog-index.md` at first mention. If no URL exists in your files, link nothing — never substitute the site root or a guessed slug. For catalog-fresh links, `https://academy.claude.com/assets/data/catalog.json` is the live index.
 
 6. **Persist progress.** At session end (or on "stop"), write/update `~/.claude/academy-coach-progress.md`: track, units completed, quiz results, suggested next unit. On "continue"/"next lesson", read it first and resume from there.
 
