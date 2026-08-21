@@ -1,0 +1,13 @@
+{
+  "name": "academy-coach-marketplace",
+  "owner": {
+    "name": "Marudi"
+  },
+  "plugins": [
+    {
+      "name": "academy-coach",
+      "source": "./",
+      "description": "Learn Anthropic products hands-on from the Claude Academy curriculum, and review your Claude Code sessions against Academy best practices."
+    }
+  ]
+}

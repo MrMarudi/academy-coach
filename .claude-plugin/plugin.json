@@ -1,0 +1,18 @@
+{
+  "name": "academy-coach",
+  "displayName": "Academy Coach",
+  "version": "0.1.0",
+  "description": "Learn Anthropic products hands-on from the Claude Academy curriculum, and review your Claude Code sessions against Academy best practices.",
+  "author": {
+    "name": "Marudi"
+  },
+  "keywords": [
+    "claude-academy",
+    "learning",
+    "teaching",
+    "session-review",
+    "coaching",
+    "best-practices",
+    "ai-fluency"
+  ]
+}
