@@ -19,6 +19,9 @@ Knowledge files: `../../knowledge/` relative to this skill's base directory (als
 | Claude Cowork | `cowork.md` |
 | Claude Tag (Slack) | `tag.md` |
 | AI Fluency (4D framework) | `ai-fluency.md` |
+| Full catalog (289 courses/tutorials/use-cases) | `catalog-index.md` |
+
+`catalog-index.md` is the routing map, not curriculum: consult it when the learner's ask is role- or task-shaped ("teach me Claude for marketing", "something for sales research") to pick the matching tutorial/use-case and link it — then still teach from the track's knowledge file. For guaranteed-fresh links, fetch `https://academy.claude.com/assets/data/catalog.json` live.
 
 ## Workflow
 

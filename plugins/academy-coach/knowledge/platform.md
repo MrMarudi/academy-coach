@@ -30,10 +30,16 @@ Deep production course for engineers shipping Claude in real apps. Requires Pyth
 
 **Introduction to Model Context Protocol** — https://academy.claude.com/courses/introduction-to-model-context-protocol — 1 hr, 10 lessons, 1 quiz
 Build MCP servers/clients from scratch in Python. Requires Python + async/await.
-Intro to MCP → clients → defining tools (SDK decorators) → server inspector → implementing a client → defining/accessing resources (MIME types) → defining/using prompts → final quiz + review.
+- Introduction (2): Introducing MCP; MCP clients
+- Hands-on with MCP servers (2): Defining tools with MCP (SDK decorators); The server inspector
+- Connecting with MCP clients (5): Implementing a client; Defining resources; Accessing resources (MIME types); Defining prompts; Prompts in the client
+- Assessment and wrap-up: final quiz, MCP review, completion badge
 
 **MCP: Advanced Topics** — https://academy.claude.com/courses/model-context-protocol-advanced-topics — 1.5 hr, 11 lessons, 1 quiz
-Production MCP for those past the basics. Sampling → progress/log notifications → roots → JSON message types → STDIO vs StreamableHTTP transports (in depth, with state) → quiz.
+Production MCP for those past the basics.
+- Core MCP features (6): Sampling + walkthrough; Log/progress notifications + walkthrough; Roots + walkthrough
+- Transports and communication (5): JSON message types; the STDIO transport; the StreamableHTTP transport; StreamableHTTP in depth; state and the StreamableHTTP transport
+- Assessment and next steps: quiz, completion badge
 
 **Claude with Amazon Bedrock** — https://academy.claude.com/courses/claude-with-amazon-bedrock — 8 hr, 65 lessons, 8 quizzes
 Same core curriculum as Building with the Claude API (auth, prompting, tool use, RAG, MCP, agents), ported to AWS Bedrock deployment/auth.
@@ -81,8 +87,9 @@ Same core curriculum ported to GCP Vertex AI, plus contextual retrieval and prov
 - Three primitives: tools (actions), resources (read-only data), prompts (reusable templates) — keep them separate.
 - Python SDK uses decorators instead of hand-written JSON schemas.
 - The server inspector is the standard way to test an MCP server before wiring a client.
-- Transport choice: STDIO for local single-client, StreamableHTTP for scalable/stateless remote multi-client.
-- Advanced: sampling shifts inference cost to the client; progress/log notifications support long operations; roots scope filesystem access securely.
+- Transport choice: STDIO is a simple local single-client pipe; StreamableHTTP handles distinct JSON message types and session state for scalable, remote multi-client use.
+- Sampling lets a server ask the connected client to run a model completion on its behalf, keeping inference cost and model choice with the client rather than the server.
+- Progress/log notifications let a long-running tool report status without blocking the response; roots let a client scope which filesystem paths a server may touch.
 - EXERCISE: build a minimal MCP server with one tool and one resource, test with the inspector, connect a client.
 - Quiz: The three MCP primitives? → tools, resources, prompts. When StreamableHTTP over STDIO? → remote, scalable, multi-client deployments.
 

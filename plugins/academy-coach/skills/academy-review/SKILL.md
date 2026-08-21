@@ -15,7 +15,7 @@ Rubrics live in `../../knowledge/` relative to this skill's base directory (also
 
 1. **Pick the mode.** Claude Code session/project → deep mode. Pasted transcript or described workflow from Claude.ai/Cowork/Tag → transcript mode with that product's rubric. Ambiguous → ask one question.
 
-2. **Load two files only:** the track's knowledge file + `ai-fluency.md`.
+2. **Load two files only:** the track's knowledge file + `ai-fluency.md`. When a finding needs a lesson link the rubric doesn't carry, look it up in `catalog-index.md` (289-item map with URLs) rather than skipping the citation — but never load the index wholesale into a report.
 
 3. **Gather evidence (deep mode).** Inspect, don't assume — every finding needs evidence you actually saw:
    - **Project:** CLAUDE.md exists? Read it — is it current, specific, free of contradictions, or stale boilerplate? `.claude/` dir: settings, hooks, skills, agents present? `.mcp.json`?
