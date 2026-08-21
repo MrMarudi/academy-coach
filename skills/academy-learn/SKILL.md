@@ -1,7 +1,6 @@
 ---
-name: learn
-description: Use when the user wants to be taught an Anthropic product or feature — "teach me Claude Code", "learn Cowork", "academy lesson", "train me on MCP / the Claude API", "how do I get good at Claude", "next lesson", "quiz me" — or asks for structured learning rather than a one-off answer. Covers Claude Code, Claude.ai, Cowork, Tag, Platform/API, and AI Fluency. Do NOT use for auditing how the user already works (that is the review skill) or for mid-task help where the user just wants their task done.
-compatibility: Ships inside the academy-coach plugin and reads the plugin's knowledge/ directory; install the plugin whole, not this skill folder alone.
+name: academy-learn
+description: Use when the user wants to be taught an Anthropic product or feature - "teach me Claude Code", "learn Cowork", "academy lesson", "train me on MCP or the Claude API", "quiz me", "next lesson" - or asks for structured learning rather than a one-off answer. Covers Claude Code, Claude.ai, Cowork, Tag, Platform/API, and AI Fluency. Do NOT use for auditing how the user already works (use academy-review) or for mid-task help where the user just wants their task done.
 ---
 
 # Academy Learn — hands-on teacher

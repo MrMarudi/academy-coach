@@ -1,7 +1,6 @@
 ---
-name: review
-description: Use when the user wants their way of working with Claude assessed — "review my session", "how am I using Claude Code", "audit my setup / workflow", "am I following best practices", "coach me", "what should I improve" — or pastes a Claude.ai/Cowork/Tag transcript and asks how they could have worked better. Do NOT use for reviewing code changes (that is code review) or for teaching a product from scratch (that is the learn skill); this skill only reviews how the human works with Claude.
-compatibility: Ships inside the academy-coach plugin and reads the plugin's knowledge/ directory; install the plugin whole, not this skill folder alone.
+name: academy-review
+description: Use when the user wants their way of working with Claude assessed — "review my session", "how am I using Claude Code", "audit my setup / workflow", "am I following best practices", "coach me", "what should I improve" — or pastes a Claude.ai/Cowork/Tag transcript and asks how they could have worked better. Do NOT use for reviewing code changes (that is code review) or for teaching a product from scratch (use academy-learn); this skill only reviews how the human works with Claude.
 ---
 
 # Academy Review — session and setup coach
