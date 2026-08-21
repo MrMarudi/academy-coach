@@ -1,7 +1,6 @@
----
 # AI Fluency — Academy Knowledge
-Source: https://academy.claude.com/collections/ai-fluency | Curriculum fetched: 2026-08-21
----
+
+*Source: https://academy.claude.com/collections/ai-fluency | Curriculum fetched: 2026-08-21*
 
 > Load this file when: teaching or reviewing AI Fluency usage. Read the section you need — Curriculum map for links, Teachable knowledge for lessons, Review rubric for audits.
 

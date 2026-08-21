@@ -1,7 +1,6 @@
----
 # Claude Academy Catalog Index
-Source: https://academy.claude.com/assets/data/catalog.json | Snapshot: 2026-08-21
----
+
+*Source: https://academy.claude.com/assets/data/catalog.json | Snapshot: 2026-08-21*
 
 > Load this file when: routing a learner to a specific tutorial or use case, or citing an Academy link for a topic not covered in the track knowledge files. For guaranteed-fresh links, fetch the source JSON live.
 

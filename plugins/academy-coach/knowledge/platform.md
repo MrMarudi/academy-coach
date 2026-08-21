@@ -1,7 +1,6 @@
----
 # Claude Platform — Academy Knowledge
-Source: https://academy.claude.com/products/platform | Curriculum fetched: 2026-08-21
----
+
+*Source: https://academy.claude.com/products/platform | Curriculum fetched: 2026-08-21*
 
 > Load this file when: teaching or reviewing Claude Platform usage. Read the section you need — Curriculum map for links, Teachable knowledge for lessons, Review rubric for audits.
 
