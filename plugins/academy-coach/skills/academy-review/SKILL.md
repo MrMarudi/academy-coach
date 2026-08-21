@@ -37,7 +37,7 @@ Rubrics live in `../../knowledge/` relative to this skill's base directory (also
    - **One-line verdict** (e.g. "Solid context habits, weak verification").
    - **What you're doing well** — 2–3 items with evidence. Earned praise only.
    - **Top improvements** — 3 to 5, ranked by impact, never more. Each: what you observed → why it costs them → the concrete change → the Academy lesson link from the rubric that teaches it.
-   - **4D snapshot** — one line each for Delegation, Description, Discernment, Diligence.
+   - **4D snapshot** — one line each for Delegation, Description, Discernment, Diligence. Each line states its evidence basis, and a dimension may only be *rated* from observed session behavior — config inventory or a single action never earns a rating. Without behavioral evidence the line reads "not assessed" (optionally noting what the config merely suggests). Not-assessed is the default, not the fallback.
    - Offer: "want to fix the top one now?" — and if yes, do it (improve the CLAUDE.md, add the hook, set up the skill) or hand off to the `learn` skill for the full unit.
 
 ## Rules
