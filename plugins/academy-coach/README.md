@@ -39,6 +39,8 @@ From Claude Code:
 
 Then say **"teach me Claude Code"** or **"review my session"**.
 
+> **If the skills don't trigger automatically:** Claude Code has a known intermittent bug ([#57515](https://github.com/anthropics/claude-code/issues/57515), [#68677](https://github.com/anthropics/claude-code/issues/68677)) that silently drops some plugin skill descriptions from the session context, which breaks automatic triggering — more likely the more plugins you have installed. The skills still work; invoke them explicitly: *"use the academy-learn skill: teach me Claude Code"* or *"use the academy-review skill"*.
+
 Local alternative: clone the repo and add it as a local plugin, or copy `skills/` + `knowledge/` into `~/.claude/skills/`.
 
 ## License

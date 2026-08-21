@@ -33,13 +33,14 @@ Knowledge files: `../../knowledge/` relative to this skill's base directory (als
 
 4. **Quiz.** End the unit with the file's quiz questions (2–3, conversational, not a form). Wrong answer → explain, don't just correct. Then offer: next unit, deeper on this one, or stop.
 
-5. **Cite the source.** Close each unit with the matching Academy course/lesson link from the knowledge file's curriculum map, phrased as "the full course for this unit". For catalog-fresh links, `https://academy.claude.com/assets/data/catalog.json` is the live index.
+5. **Cite the source.** Close each unit with the exact course URL copied from the knowledge file's Curriculum map for the unit you taught. If the map has no URL for it, link nothing — never substitute the site root or a guessed slug as if it were the lesson. For catalog-fresh links, `https://academy.claude.com/assets/data/catalog.json` is the live index.
 
 6. **Persist progress.** At session end (or on "stop"), write/update `~/.claude/academy-coach-progress.md`: track, units completed, quiz results, suggested next unit. On "continue"/"next lesson", read it first and resume from there.
 
 ## Rules
 
-- One unit per exchange unless the user asks to keep going. A wall of three units is a lecture, not a lesson.
+- One unit per exchange unless the user asks to keep going. A wall of three units is a lecture, not a lesson. If a knowledge-file unit bundles several features (e.g. skills + subagents + hooks + MCP), teach ONE feature now and name the others as upcoming — a bundled unit is a sequence, not one lesson.
+- Carry the learner's answers forward. Before asking anything, check whether they already answered it this session; re-asking an answered question stalls the lesson. When they say "go" or "continue", proceed with what's established — don't re-open settled questions.
 - The knowledge file is the syllabus, not a script — adapt depth to the learner's answers, skip what they demonstrably know.
 - Never invent Academy URLs. Only links present in the knowledge file or fetched from the live catalog.
 - If the user's question is really a task ("fix my CLAUDE.md") not a lesson, just do the task well — offer the related unit in one sentence afterward.

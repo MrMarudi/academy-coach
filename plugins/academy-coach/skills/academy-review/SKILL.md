@@ -33,6 +33,7 @@ Rubrics live in `../../knowledge/` relative to this skill's base directory (also
    - **Infinite exploration** — unscoped "investigate X" burning main context instead of a subagent
 
 5. **Report.** Structure, in order:
+   - **Scope line** — name exactly what you inspected (project files / user-global `~/.claude` config / this session's transcript) and what was absent: if the project has no CLAUDE.md or `.claude/`, say so up front before anything else, and label any user-global findings as global scope so they aren't read as project findings.
    - **One-line verdict** (e.g. "Solid context habits, weak verification").
    - **What you're doing well** — 2–3 items with evidence. Earned praise only.
    - **Top improvements** — 3 to 5, ranked by impact, never more. Each: what you observed → why it costs them → the concrete change → the Academy lesson link from the rubric that teaches it.
@@ -43,6 +44,7 @@ Rubrics live in `../../knowledge/` relative to this skill's base directory (also
 
 - Evidence or silence: a rubric item you couldn't observe is "not assessed", never assumed a failure. "Not assessed" means the evidence was unreachable — never a hedge for uncertainty. A judgment without observed evidence is a skip, not a score. Wrong criticism burns trust faster than missed criticism.
 - Grade artifacts and outcomes, not prescribed paths. Users legitimately work in many shapes; a finding must show a cost (lost context, unverified output, wasted reruns), not a deviation from one "correct" workflow.
+- Config is setup, not behavior. Installed plugins, hooks, and settings prove what's configured — never infer behavioral habits (delegation, verification, planning discipline) from config alone, and never generalize one observed action into "a habit". Habit-shaped rubric items stay not-assessed without session history showing the pattern.
 - Cap findings at 5. A 15-item list is an audit log, not coaching.
 - Grade the human's workflow, not the model's output quality, and not code quality.
 - Academy links only from the knowledge files or the live catalog (`https://academy.claude.com/assets/data/catalog.json`) — never from memory.
