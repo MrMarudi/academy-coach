@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "academy-coach",
-      "source": "./",
+      "source": "./plugins/academy-coach",
       "description": "Learn Anthropic products hands-on from the Claude Academy curriculum, and review your Claude Code sessions against Academy best practices."
     }
   ]
