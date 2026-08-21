@@ -30,17 +30,15 @@ Knowledge files: `../../knowledge/` relative to this skill's base directory (als
 2. **Place the learner.** Ask 2–3 questions max, in one turn only — placement never spans turns. If the ask is task- or role-shaped ("teach me Claude for marketing"), don't block on questions: pick the best-fit track, state the assumption in one line ("assuming Claude.ai — say the word if you meant Cowork"), and start teaching that same turn. Then name the unit you'll start with from the file's "Teachable knowledge" section and why. A returning learner ("next lesson", "continue") — check for a progress file first (step 6).
 
 3. **Teach one unit at a time.** For the current unit:
+   - **Open with the unit header, which carries the citation:**
+     `**Unit N: <name>** · 📚 [<course title>](<exact URL copied from the Curriculum map>)` — for task/role-shaped asks append ` · [<matching use case/tutorial>](<URL from catalog-index.md>)`. The header is the first line of teaching, every unit, no exceptions — the learner should be able to open the real course alongside the lesson.
    - Explain the concepts in your own words, concise, grounded in the unit's bullets.
-   - **Run the unit's hands-on exercise in the user's actual environment.** This is the point of the skill. Teaching CLAUDE.md → open and improve *their* CLAUDE.md. Teaching subagents → dispatch one on *their* code. Teaching the API → write and run a real script against *their* key (ask before spending credits). If no project is open, use a scratch example, but say so and prefer real. The exercise is a concrete task you set ("do X, then check Y") — an open offer to help ("want me to set something up?") is not an exercise.
+   - **Run the unit's hands-on exercise in the user's actual environment.** This is the point of the skill. Teaching CLAUDE.md → open and improve *their* CLAUDE.md. Teaching subagents → dispatch one on *their* code. Teaching the API → write and run a real script against *their* key (ask before spending credits). If no project is open, use a scratch example, but say so and prefer real. The exercise is an imperative task with a deliverable the learner produces ("Do X. Paste the output.") — an open offer ("want me to set something up?") is not an exercise. When the natural exercise would need permissions or spend money, set a free sub-task instead (sketch the schema, predict the output and check it, edit the scratch file) rather than downgrading the exercise to an offer.
    - Reversibility gate: read-only checks, printed examples, and practice in scratch space run freely; anything that modifies the user's files, installs packages, or spends money — show what you're about to do and get a yes first.
 
 4. **Quiz.** End the unit with the file's quiz questions (2–3, conversational, not a form). Wrong answer → explain, don't just correct. Then offer: next unit, deeper on this one, or stop.
 
-5. **Close with the Source line.** Every taught unit ends with this required line, built from the URLs you copied in step 1:
-
-   `📚 Source: [<course title>](<exact URL from the Curriculum map>)` — plus, for task/role-shaped asks, `· [<matching use case or tutorial>](<exact URL from catalog-index.md>)`.
-
-   The URL is copied verbatim from the knowledge file or catalog index (they came from `https://academy.claude.com/assets/data/catalog.json`, the live index) — never typed from memory or guessed from a slug. A unit without its Source line is unfinished.
+5. **Cite only real URLs.** Every Academy link you write is copied verbatim from the knowledge file or `catalog-index.md` (both generated from `https://academy.claude.com/assets/data/catalog.json`, the live index) — never typed from memory or guessed from a slug. The unit header (step 3) is where the citation lives; don't repeat it at the close.
 
 6. **Persist progress.** At session end (or on "stop"), write/update `~/.claude/academy-coach-progress.md`: track, units completed, quiz results, suggested next unit. On "continue"/"next lesson", read it first and resume from there.
 
