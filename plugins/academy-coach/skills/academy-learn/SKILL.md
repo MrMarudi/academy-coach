@@ -25,18 +25,22 @@ Knowledge files: `../../knowledge/` relative to this skill's base directory (als
 
 ## Workflow
 
-1. **Pick the track.** If the user named a product, use ONLY that knowledge file. If not, list the six tracks in one short menu and ask. Load just-in-time: first read only the file's unit headings and curriculum map to plan; read a unit's full content only when you're about to teach it. Never hold more than one track in context.
+1. **Pick the track.** If the user named a product, use ONLY that knowledge file. If not, list the six tracks in one short menu and ask. Load just-in-time: first read only the file's unit headings and curriculum map to plan; read a unit's full content only when you're about to teach it. Never hold more than one track in context. **While reading, copy the URLs you will cite later:** the unit's course URL from the Curriculum map, and — for task- or role-shaped asks — the 1–2 best-matching item URLs from `catalog-index.md`. The closing Source line (step 5) needs them.
 
 2. **Place the learner.** Ask 2–3 questions max, in one turn only — placement never spans turns. If the ask is task- or role-shaped ("teach me Claude for marketing"), don't block on questions: pick the best-fit track, state the assumption in one line ("assuming Claude.ai — say the word if you meant Cowork"), and start teaching that same turn. Then name the unit you'll start with from the file's "Teachable knowledge" section and why. A returning learner ("next lesson", "continue") — check for a progress file first (step 6).
 
 3. **Teach one unit at a time.** For the current unit:
    - Explain the concepts in your own words, concise, grounded in the unit's bullets.
-   - **Run the unit's hands-on exercise in the user's actual environment.** This is the point of the skill. Teaching CLAUDE.md → open and improve *their* CLAUDE.md. Teaching subagents → dispatch one on *their* code. Teaching the API → write and run a real script against *their* key (ask before spending credits). If no project is open, use a scratch example, but say so and prefer real.
+   - **Run the unit's hands-on exercise in the user's actual environment.** This is the point of the skill. Teaching CLAUDE.md → open and improve *their* CLAUDE.md. Teaching subagents → dispatch one on *their* code. Teaching the API → write and run a real script against *their* key (ask before spending credits). If no project is open, use a scratch example, but say so and prefer real. The exercise is a concrete task you set ("do X, then check Y") — an open offer to help ("want me to set something up?") is not an exercise.
    - Reversibility gate: read-only checks, printed examples, and practice in scratch space run freely; anything that modifies the user's files, installs packages, or spends money — show what you're about to do and get a yes first.
 
 4. **Quiz.** End the unit with the file's quiz questions (2–3, conversational, not a form). Wrong answer → explain, don't just correct. Then offer: next unit, deeper on this one, or stop.
 
-5. **Cite the source.** Close each unit with the exact course URL copied from the knowledge file's Curriculum map for the unit you taught. A citation is a full `https://` markdown link — a course title or slug without its URL is not a citation. The same applies whenever you name any catalog item (use case, tutorial): attach its URL from `catalog-index.md` at first mention. If no URL exists in your files, link nothing — never substitute the site root or a guessed slug. For catalog-fresh links, `https://academy.claude.com/assets/data/catalog.json` is the live index.
+5. **Close with the Source line.** Every taught unit ends with this required line, built from the URLs you copied in step 1:
+
+   `📚 Source: [<course title>](<exact URL from the Curriculum map>)` — plus, for task/role-shaped asks, `· [<matching use case or tutorial>](<exact URL from catalog-index.md>)`.
+
+   The URL is copied verbatim from the knowledge file or catalog index (they came from `https://academy.claude.com/assets/data/catalog.json`, the live index) — never typed from memory or guessed from a slug. A unit without its Source line is unfinished.
 
 6. **Persist progress.** At session end (or on "stop"), write/update `~/.claude/academy-coach-progress.md`: track, units completed, quiz results, suggested next unit. On "continue"/"next lesson", read it first and resume from there.
 

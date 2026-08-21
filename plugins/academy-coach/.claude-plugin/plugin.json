@@ -1,7 +1,7 @@
 {
   "name": "academy-coach",
   "displayName": "Academy Coach",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Learn Anthropic products hands-on from the Claude Academy curriculum, and review your Claude Code sessions against Academy best practices.",
   "author": {
     "name": "Marudi"
