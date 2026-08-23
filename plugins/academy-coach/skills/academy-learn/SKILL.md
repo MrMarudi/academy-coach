@@ -1,6 +1,7 @@
 ---
 name: academy-learn
 description: Use when the user wants to be taught an Anthropic product or feature - "teach me Claude Code", "learn Cowork", "academy lesson", "train me on MCP or the Claude API", "quiz me", "next lesson" - or asks for structured learning rather than a one-off answer. Covers Claude Code, Claude.ai, Cowork, Tag, Platform/API, and AI Fluency. Do NOT use for auditing how the user already works (use academy-review) or for mid-task help where the user just wants their task done.
+allowed-tools: Read Write Bash WebFetch
 ---
 
 # Academy Learn — hands-on teacher
@@ -19,7 +20,7 @@ Knowledge files: `../../knowledge/` relative to this skill's base directory (als
 | Claude Cowork | `cowork.md` |
 | Claude Tag (Slack) | `tag.md` |
 | AI Fluency (4D framework) | `ai-fluency.md` |
-| Full catalog (289 courses/tutorials/use-cases) | `catalog-index.md` |
+| Full catalog (297 courses/tutorials/use-cases) | `catalog-index.md` |
 
 `catalog-index.md` is the routing map, not curriculum: consult it when the learner's ask is role- or task-shaped ("teach me Claude for marketing", "something for sales research") to pick the matching tutorial/use-case and link it — then still teach from the track's knowledge file. For guaranteed-fresh links, fetch `https://academy.claude.com/assets/data/catalog.json` live.
 
@@ -40,7 +41,7 @@ Knowledge files: `../../knowledge/` relative to this skill's base directory (als
 
 5. **Cite only real URLs.** Every Academy link you write is copied verbatim from the knowledge file or `catalog-index.md` (both generated from `https://academy.claude.com/assets/data/catalog.json`, the live index) — never typed from memory or guessed from a slug. The unit header (step 3) is where the citation lives; don't repeat it at the close.
 
-6. **Persist progress.** At session end (or on "stop"), write/update `~/.claude/academy-coach-progress.md`: track, units completed, quiz results, suggested next unit. On "continue"/"next lesson", read it first and resume from there.
+6. **Persist progress.** At session end (or on "stop"), write/update `~/.claude/academy-coach-progress.json` in this format: `{"track": "claude-code", "units_completed": [1, 2], "last_quiz": {"unit": 2, "score": "2/3"}, "next_unit": 3}`. On "continue"/"next lesson", read it first and resume from there. If only the old `~/.claude/academy-coach-progress.md` exists (pre-0.1.14 format), read it, extract the progress, write the new `.json` file, and delete the old `.md` only after confirming the `.json` was written successfully.
 
 ## Rules
 

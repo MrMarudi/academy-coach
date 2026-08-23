@@ -1,6 +1,7 @@
 ---
 name: academy-review
 description: Use when the user wants their way of working with Claude assessed — "review my session", "how am I using Claude Code", "audit my setup / workflow", "am I following best practices", "coach me", "what should I improve" — or pastes a Claude.ai/Cowork/Tag transcript and asks how they could have worked better. Do NOT use for reviewing code changes (that is code review) or for teaching a product from scratch (use academy-learn); this skill only reviews how the human works with Claude.
+allowed-tools: Read Bash Grep Glob Edit Write
 ---
 
 # Academy Review — session and setup coach
@@ -15,10 +16,11 @@ Rubrics live in `../../knowledge/` relative to this skill's base directory (also
 
 1. **Pick the mode.** Claude Code session/project → deep mode. Pasted transcript or described workflow from Claude.ai/Cowork/Tag → transcript mode with that product's rubric. Ambiguous → ask one question.
 
-2. **Load two files only:** the track's knowledge file + `ai-fluency.md`. When a finding needs a lesson link the rubric doesn't carry, look it up in `catalog-index.md` (289-item map with URLs) rather than skipping the citation — but never load the index wholesale into a report.
+2. **Load two files only:** the track's knowledge file + `ai-fluency.md`. When a finding needs a lesson link the rubric doesn't carry, look it up in `catalog-index.md` (297-item map with URLs) rather than skipping the citation — but never load the index wholesale into a report.
 
 3. **Gather evidence (deep mode).** Inspect, don't assume — every finding needs evidence you actually saw:
-   - **Project:** CLAUDE.md exists? Read it — is it current, specific, free of contradictions, or stale boilerplate? `.claude/` dir: settings, hooks, skills, agents present? `.mcp.json`?
+   - **Run `gather-facts.sh` first** (at `scripts/gather-facts.sh` relative to this skill's base directory). Run it from the project root. It outputs compact JSON with deterministic project facts: CLAUDE.md existence/line count, `.claude/` contents (settings, hooks/skills/agents entry counts), `.mcp.json` validity/server count, git commit count, user-global config. Use this as ground truth — it eliminates hallucinated findings and saves ~4,700 tokens vs. reading each file through the LLM. If the script errors or outputs nothing (e.g. non-bash environment), fall back to reading the files directly and note that facts are LLM-gathered, not script-gathered.
+   - **Project (beyond the script):** Read CLAUDE.md itself — is it current, specific, free of contradictions, or stale boilerplate? The script tells you it exists and how long it is; you still need to read it for quality.
    - **Session (this conversation):** Was there a planning step before implementation? Explicit verification of outputs (tests run, diffs read) or blind trust? Were subagents/skills used where they fit? Did context balloon across unrelated tasks? Were risky actions approved deliberately?
    - **History (if available):** git log for commit hygiene — especially checkpoint discipline: were commits made before letting Claude run autonomously, so bad runs are revertible? `~/.claude/` for user-level config.
    - Delegate heavy inspection (reading a big CLAUDE.md history, scanning many configs) to a subagent to keep this session's context clean — which is itself the practice being graded.
@@ -37,7 +39,13 @@ Rubrics live in `../../knowledge/` relative to this skill's base directory (also
    - **One-line verdict** (e.g. "Solid context habits, weak verification").
    - **What you're doing well** — 2–3 items with evidence. Earned praise only.
    - **Top improvements** — 3 to 5, ranked by impact, never more. Each: what you observed → why it costs them → the concrete change → the Academy lesson link from the rubric that teaches it. An observed absence is evidence too: no verification setup (no tests/checks Claude could run), no hooks guarding risky actions, a CLAUDE.md line the code makes redundant — these are findings you SAW, distinct from unobservable session habits. A project with real gaps should yield the full 3; fewer than 3 is only right when the setup is genuinely clean.
-   - **4D snapshot** — one line each for Delegation, Description, Discernment, Diligence. Each line states its evidence basis, and a dimension may only be *rated* from observed session behavior — config inventory or a single action never earns a rating. Without behavioral evidence the line reads "not assessed" (optionally noting what the config merely suggests). Not-assessed is the default, not the fallback. The act of requesting this review — including invoking this skill, or phrasing the audit request well — is never evidence for any dimension: every review would score it, so it distinguishes nothing. If a fresh session's only observed behavior is the review request itself, all four lines read "not assessed".
+   - **4D snapshot** — one line each for Delegation, Description, Discernment, Diligence. Rules:
+     - Each line states its evidence basis.
+     - Rate a dimension only from observed session behavior, not config or a single action.
+     - Without behavioral evidence, the line reads "not assessed" (optionally noting what config suggests).
+     - "Not assessed" is the default, not the fallback.
+     - The review request itself (invoking this skill, phrasing the audit well) is never evidence — every review would score it, so it distinguishes nothing.
+     - If a fresh session's only observed behavior is the review request, all four lines read "not assessed".
    - Offer: "want to fix the top one now?" — and if yes, do it (improve the CLAUDE.md, add the hook, set up the skill) or hand off to the `learn` skill for the full unit.
 
 ## Rules
