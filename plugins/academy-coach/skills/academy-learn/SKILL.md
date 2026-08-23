@@ -26,7 +26,7 @@ Knowledge files: `../../knowledge/` relative to this skill's base directory (als
 
 ## Workflow
 
-1. **Pick the track.** If the user named a product, use ONLY that knowledge file. If not, list the six tracks in one short menu and ask. Load just-in-time: first read only the file's unit headings and curriculum map to plan; read a unit's full content only when you're about to teach it. Never hold more than one track in context. **While reading, copy the URLs you will cite later:** the unit's course URL from the Curriculum map, and — for task- or role-shaped asks — the 1–2 best-matching item URLs from `catalog-index.md`. The closing Source line (step 5) needs them.
+1. **Pick the track.** If the user named a product, use ONLY that knowledge file. If not, list the six tracks in one short menu and ask. Load just-in-time: first read only the file's unit headings and curriculum map to plan; read a unit's full content only when you're about to teach it. Never hold more than one track in context. **While reading, copy the URLs you will cite later:** the unit's course URL from the Curriculum map, and — for task- or role-shaped asks — the 1–2 best-matching item URLs from `catalog-index.md`. The unit header (step 3) needs them.
 
 2. **Place the learner.** Ask 2–3 questions max, in one turn only — placement never spans turns. If the ask is task- or role-shaped ("teach me Claude for marketing"), don't block on questions: pick the best-fit track, state the assumption in one line ("assuming Claude.ai — say the word if you meant Cowork"), and start teaching that same turn. Then name the unit you'll start with from the file's "Teachable knowledge" section and why. A returning learner ("next lesson", "continue") — check for a progress file first (step 6).
 
