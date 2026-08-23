@@ -45,7 +45,7 @@ Then say **"teach me Claude Code"** or **"review my session"**. If skills don't 
 
 ## How it works
 
-Each skill is a `SKILL.md` instruction set plus distilled knowledge files: per-track curriculum summaries with teachable units, exercises, quizzes, and review rubrics, all sourced from academy.claude.com, plus a **297-item index of every Academy course, tutorial, and use case** generated from Anthropic's live catalog JSON — so links point at real, current courses instead of stale summaries.
+Each skill is a `SKILL.md` instruction set plus distilled knowledge files: per-track curriculum summaries with teachable units, exercises, quizzes, and review rubrics, all sourced from academy.claude.com, plus a **297-item index of every Academy course, tutorial, and use case** generated from Anthropic's live catalog JSON — so links point at real, current courses instead of stale summaries. The review skill also ships a `gather-facts.sh` script that collects deterministic project facts (CLAUDE.md, `.claude/` config, `.mcp.json`, git state) as compact JSON, so the reviewer reasons over ground truth instead of hallucinating from raw file reads.
 
 The skills were hardened through a self-improvement loop: fresh headless Claude Code sessions ran realistic scenarios, independent judge agents graded the transcripts against strict rubrics, and every failure became a skill fix — 13 versions until the full suite passed. Real defects that loop caught: the tutor lecturing four features in one message, offering to do the exercise itself instead of assigning it, and rating "habits" from config files instead of observed behavior.
 
@@ -76,12 +76,14 @@ Academy Coach is an independent open-source project, not affiliated with Anthrop
 ```
 plugins/academy-coach/
 ├── skills/
-│   ├── academy-learn/SKILL.md    ← the tutor
-│   └── academy-review/SKILL.md   ← the coach
-└── knowledge/                    ← distilled curriculum, one file per track
+│   ├── academy-learn/SKILL.md         ← the tutor
+│   └── academy-review/
+│       ├── SKILL.md                   ← the coach
+│       └── scripts/gather-facts.sh    ← deterministic project fact-gathering
+└── knowledge/                         ← distilled curriculum, one file per track
     ├── claude-code.md  platform.md  claude-ai.md
     ├── cowork.md  tag.md  ai-fluency.md
-    └── catalog-index.md          ← all 297 Academy items with links
+    └── catalog-index.md               ← all 297 Academy items with links
 ```
 
 ## License
@@ -92,4 +94,4 @@ Maintained by [Marudi (MrMarudi)](https://github.com/MrMarudi).
 
 ---
 
-*Current version: 0.1.13 (August 2026). Curriculum snapshot: 2026-08-21, refreshed from the live Academy catalog at academy.claude.com.*
+*Current version: 0.1.14 (August 2026). Curriculum snapshot: 2026-08-21, refreshed from the live Academy catalog at academy.claude.com.*
